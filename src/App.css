@@ -23,3 +23,12 @@ body{
     transition: 1s;
     
 }
+
+/* .grid{
+display: grid;
+gap: 5px ;
+grid-template-columns: auto auto 1fr 1fr 1fr;
+justify-content: space-between;
+
+
+} */

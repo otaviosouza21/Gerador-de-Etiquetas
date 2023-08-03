@@ -1,19 +1,33 @@
-.container{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    background-color: #585858;
-  min-width: 100%;
-  justify-content: center;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #585858;;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.header img{
+    width: 40px;
 }
 
 .buttons{
     display: flex;
+    gap: 20px;
 }
 
-.titles{
-    display: flex;
-    align-items: center;
-    color: #fff;
 
+ h1 {
+  flex: 2;
+  color: #fff;
+  font-size: 2.2rem;
+  margin: 0 auto;
 }
