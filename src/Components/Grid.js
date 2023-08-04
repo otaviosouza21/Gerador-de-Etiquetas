@@ -1,47 +1,93 @@
 import React from "react";
 import style from "../css/Grid.module.css";
-import checkUn from '../Assets/check-box-unchecked-svgrepo-com.svg'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
+import checkUn from "../Assets/check-box-unchecked-svgrepo-com.svg";
+import checked from "../Assets/check-box-svgrepo-com.svg";
 
 const Grid = ({ pedido }) => {
-  const [arrayPedidos, setArrayPedidos] = React.useState([]);
+  const [checkedRows, setCheckedRows] = React.useState([]);
 
   const titulos = pedido.map((ped) => ped.name.split("-"));
+  const desc = pedido.map((ped) => ped.desc.split("*"));
 
   let titleArray = titulos.map((tit, idx) => {
+
+    let volumes = "";
+    let cargasVolumes = ""
+  
+
+    if (desc[idx][1]) {
+      volumes = desc[idx][1].trim().split("-");
+      cargasVolumes = volumes.map((vol)=>{
+       return vol.trim().split("")
+      })
+    }
+
+  
+
+
+
     return {
+      check: "ok",
       pedido: tit[0].slice(3),
       nome: tit[1],
+      endereco: desc[idx][0],
+      volume: desc[idx][1],
     };
   });
 
-  console.log(titleArray);
+  const toggleRowCheck = (index) => {
+    const newCheckedRows = [...checkedRows];
+    if (newCheckedRows.includes(index)) {
+      newCheckedRows.splice(newCheckedRows.indexOf(index), 1);
+    } else {
+      newCheckedRows.push(index);
+    }
+    setCheckedRows(newCheckedRows);
+  };
 
   return (
-    <section className={`${style.container}`}>
-      {titleArray.map((title) => {
-        return (
-          <>
-            <ul className={style.column}>
-              <li>
-                <img src={checkUn}/>
-              </li>
-            </ul>
-            <ul className={style.column}>
-              <li>{title.pedido}</li>
-            </ul>
-            <ul className={style.column}>
-              <li>{title.nome}</li>
-            </ul>
-            <ul className={style.column}>
-              <li>Endereço</li>
-            </ul>
-            <ul className={style.column}>
-              <li>Volume</li>
-            </ul>
-          </>
-        );
-      })}
-    </section>
+    <TableContainer className={style.grid} component={Paper}>
+      <Table className={style.table}>
+        <TableHead>
+          <TableRow className={style.header}>
+            <TableCell>Check</TableCell>
+            <TableCell>Pedido</TableCell>
+            <TableCell>Cliente</TableCell>
+            <TableCell>Endereço</TableCell>
+            <TableCell>Volume</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody className={style.body}>
+          {titleArray.map((tit, index) => {
+            const isChecked = checkedRows.includes(index);
+            return (
+              <TableRow
+                onClick={() => toggleRowCheck(index)}
+                key={index}
+                style={isChecked ? { background: "#90db94" } : null}
+              >
+                <TableCell>
+                  <img src={isChecked ? checked : checkUn}></img>
+                </TableCell>
+                <TableCell>{tit.pedido}</TableCell>
+                <TableCell>{tit.nome}</TableCell>
+                <TableCell>{tit.endereco}</TableCell>
+                <TableCell>{tit.volume}</TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 

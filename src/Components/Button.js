@@ -1,13 +1,18 @@
 import React from "react";
 import style from "../css/Button.module.css";
 
-const Button = ({ icon, text, Color, letterColor }) => {
+const Button = ({ iconUpdate, text, Color, letterColor, setUpdate, update }) => {
+
+
   return (
     <button
       className={`${style.button} ${text}`}
       style={{ color: letterColor, background: Color }}
+      onClick={() => {
+        if(setUpdate) setUpdate(!update)
+      }}
     >
-      <img src={icon} />
+      <img src={iconUpdate} />
       {text}
     </button>
   );

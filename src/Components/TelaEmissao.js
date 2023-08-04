@@ -2,11 +2,11 @@ import React from "react";
 import style from "../css/TelaEmissao.module.css";
 import logo from "../Assets/Logo-removebg-preview.png";
 import Button from "./Button";
-import update from "../Assets/update.svg";
+import iconUpdate from "../Assets/update.svg";
 import print from "../Assets/printer-svgrepo-com.svg";
 import Grid from "./Grid";
 
-const TelaEmissao = ({pedido}) => {
+const TelaEmissao = ({pedido, setUpdate , update}) => {
   return (
     <section className={style.container}>
       <header>
@@ -22,13 +22,17 @@ const TelaEmissao = ({pedido}) => {
               text="Atualizar"
               Color="#2D7A12"
               letterColor="#FFF"
+              setUpdate={setUpdate}
+              update={update}
+              iconUpdate={iconUpdate}
             />
             <Button
-              icon={print}
+              iconUpdate={print}
               text="Imprimir"
               Color="#9C9C9C"
               letterColor="#242323"
             />
+            
           </div>
         </div>
       </header>

@@ -25,7 +25,7 @@ const Home = () => {
   if (data)
     return (
       <main>
-        <TelaEmissao pedido={data} />
+        <TelaEmissao setUpdate={setUpdate} update={update} pedido={data} />
 
       {/*   {data.map((card,idx) => {
           return <Cards key={idx} card={card} />;
