@@ -22,17 +22,25 @@ const Grid = ({ pedido }) => {
 
     let volumes = "";
     let cargasVolumes = ""
+    let quantCargasVolumes = {}
   
 
     if (desc[idx][1]) {
       volumes = desc[idx][1].trim().split("-");
       cargasVolumes = volumes.map((vol)=>{
-       return vol.trim().split("")
+       const cargas= vol.trim().split("")
+       const quantidade = cargas.map(quant=>quant)
+       return quantidade
       })
     }
+    else {
+      volumes = 0
+      cargasVolumes = 0
+    }
 
+
+if(cargasVolumes === 0) console.log("existe");
   
-
 
 
     return {
