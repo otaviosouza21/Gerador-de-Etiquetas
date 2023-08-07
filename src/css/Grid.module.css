@@ -1,9 +1,10 @@
 .grid{
-    max-height: 600px;
+    height: 400px;
 }
 
 .header{
     background-color: rgb(107, 105, 105);
+
 }
 
 .header th{

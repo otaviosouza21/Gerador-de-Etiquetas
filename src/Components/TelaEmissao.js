@@ -5,8 +5,11 @@ import Button from "./Button";
 import iconUpdate from "../Assets/update.svg";
 import print from "../Assets/printer-svgrepo-com.svg";
 import Grid from "./Grid";
+import Modal from "./Modal";
 
-const TelaEmissao = ({pedido, setUpdate , update}) => {
+const TelaEmissao = ({ pedido, setUpdate, update }) => {
+  const [modal, setModal] = React.useState(false);
+
   return (
     <section className={style.container}>
       <header>
@@ -31,12 +34,14 @@ const TelaEmissao = ({pedido, setUpdate , update}) => {
               text="Imprimir"
               Color="#9C9C9C"
               letterColor="#242323"
+              setModal={setModal}
+              modal={modal}
             />
-            
           </div>
         </div>
       </header>
-      <Grid pedido={pedido}/>
+      <Grid pedido={pedido} />
+      {modal && <Modal setModal={setModal} modal={modal} />}
     </section>
   );
 };
