@@ -1,22 +1,30 @@
 
+.container{
+    display: flex;
+    gap: 5px;
+}
+
 .campo{
     display: flex;
     justify-content: space-between;
     background-color: white;
     border-radius: 5px;
     padding: 5px;
-    max-width: 200px;
     gap: 2px;
     margin-bottom: 2px;
+
 }
 
 
 .campo input{
     border: none;
-    width: 100%;
+    display: flex;
+text-align: center;
     background-color: white;
     border-bottom: 1px solid black;
     background: none;
     outline: none;
     font-weight: bold;
+    width: 40px;
+
 }

@@ -11,7 +11,7 @@ const Cards = ({ card }) => {
     request(url, options);
   }, []);
 
-console.log(data);
+
 
   if (card)
     return (

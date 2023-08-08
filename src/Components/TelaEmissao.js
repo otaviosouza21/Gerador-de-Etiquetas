@@ -9,6 +9,9 @@ import Modal from "./Modal";
 
 const TelaEmissao = ({ pedido, setUpdate, update }) => {
   const [modal, setModal] = React.useState(false);
+  const [ticketList,setTicketList] = React.useState([])
+
+
 
   return (
     <section className={style.container}>
@@ -40,8 +43,8 @@ const TelaEmissao = ({ pedido, setUpdate, update }) => {
           </div>
         </div>
       </header>
-      <Grid pedido={pedido} />
-      {modal && <Modal setModal={setModal} modal={modal} />}
+      <Grid pedido={pedido} setTicketList={setTicketList} ticketList={ticketList}/>
+      {modal && <Modal setModal={setModal} modal={modal} ticketList={ticketList}/>}
     </section>
   );
 };

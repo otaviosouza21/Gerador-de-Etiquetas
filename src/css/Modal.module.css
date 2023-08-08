@@ -21,6 +21,8 @@
     border: solid 5px rgba(3, 3, 3, 0.89);
     padding: 20px;
     position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .modal::after{
@@ -51,7 +53,7 @@
     margin-bottom: 10px;
     align-items: center;
     position: relative;
-    
+
 
 }
 
@@ -91,3 +93,5 @@
         flex-direction: column;
         gap: 10px;
       }
+
+   
