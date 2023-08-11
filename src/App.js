@@ -1,15 +1,20 @@
-import Home from './Components/Home'
-import './App.css'
-
+import React from "react";
+import Home from "./Components/Home";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Etiqueta from "./Components/Etiqueta";
+import { GlobalStorage } from "./Context/GlobalContext";
 
 function App() {
   return (
- <div>
-  <Home />
-
-
- </div>
+    <BrowserRouter>
+      <GlobalStorage>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="etiqueta" element={<Etiqueta />} />
+        </Routes>
+      </GlobalStorage>
+    </BrowserRouter>
   );
 }
-
 export default App;

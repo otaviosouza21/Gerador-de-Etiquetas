@@ -1,31 +1,26 @@
 import React from "react";
 import style from "../css/Modal.module.css";
-import Button from "./Button";
-import update from "../Assets/printer-svgrepo-com.svg";
-import Input from "./Input";
+import Imprimir from "./Imprimir";
+import { GlobalContext } from "../Context/GlobalContext";
+import Card from "./Card";
 
 const Modal = ({ setModal, modal, ticketList }) => {
+  const { data, setData } = React.useContext(GlobalContext);
+
   return (
     <>
       <section className={style.container}>
         <div className={style.modal}>
           <h1>Volumes</h1>
-          
-            {ticketList.map((tiket,index) => {
-             return <li key={index} className={style.pedido}>
-                <div className={style.dadosPedido}>
-                  <h3>{tiket.pedido}</h3>
-                  <h4>{tiket.nome}</h4>
-                  <p>{tiket.endereco}</p>
-                </div>
-                <div className={style.carga}>
-                  <h3>Carga/Volume</h3>
-                  <Input />
-                </div>
-              </li>;
-            })}
-          
-          <Button text="Imprimir" iconUpdate={update} />
+          {ticketList.map((tiket, index) => {
+           
+            return <Card tiket={tiket} index={index} key={index}/>; 
+          })}
+          <Imprimir
+            data={data}
+            setData={setData}
+            ticketList={ticketList}
+          />
           <div
             onClick={() => setModal(!modal)}
             className={style.closeButton}

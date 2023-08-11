@@ -1,9 +1,9 @@
 import React from "react";
 import { GET_CARDS, GET_PLUGIN } from "../API/api";
 import useFetch from "../API/useFetch";
-import Cards from "./Cards";
 import TelaEmissao from "./TelaEmissao";
 import Modal from "./Modal";
+import { GlobalStorage } from "../Context/GlobalContext";
 
 const Home = () => {
   const { data, loading, error, request } = useFetch();
@@ -27,10 +27,9 @@ const Home = () => {
 
   if (data)
     return (
-      <main>
+     
         <TelaEmissao setUpdate={setUpdate} update={update} pedido={data} />
-        
-      </main>
+    
     );
 };
 

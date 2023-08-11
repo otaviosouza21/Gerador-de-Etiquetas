@@ -6,12 +6,11 @@ import iconUpdate from "../Assets/update.svg";
 import print from "../Assets/printer-svgrepo-com.svg";
 import Grid from "./Grid";
 import Modal from "./Modal";
+import { GlobalStorage } from "../Context/GlobalContext";
 
 const TelaEmissao = ({ pedido, setUpdate, update }) => {
   const [modal, setModal] = React.useState(false);
-  const [ticketList,setTicketList] = React.useState([])
-
-
+  const [ticketList, setTicketList] = React.useState([]);
 
   return (
     <section className={style.container}>
@@ -43,8 +42,16 @@ const TelaEmissao = ({ pedido, setUpdate, update }) => {
           </div>
         </div>
       </header>
-      <Grid pedido={pedido} setTicketList={setTicketList} ticketList={ticketList}/>
-      {modal && <Modal setModal={setModal} modal={modal} ticketList={ticketList}/>}
+      <Grid
+        pedido={pedido}
+        setTicketList={setTicketList}
+        ticketList={ticketList}
+      />
+      {modal && (
+ 
+          <Modal setModal={setModal} modal={modal} ticketList={ticketList} />
+      
+      )}
     </section>
   );
 };

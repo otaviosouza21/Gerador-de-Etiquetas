@@ -1,0 +1,54 @@
+.code img{
+    max-width: 100px;
+    height: 180px;
+}
+
+.etiqueta{
+    display: grid;
+    grid-template-columns: auto auto;
+ ;
+    width: 500px;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.etiqueta h2{
+    font-size: 1.3rem;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: solid 1px black;
+    align-items: center ;
+    gap: 10px;
+}
+
+.dados{
+    padding: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1/4;
+    border-left: solid 1px rgb(150, 139, 139);
+    padding: 10px;
+ 
+}
+
+.carga{
+    border-top: solid 1px black;
+   text-align: center;
+   font-size: 2.2rem;
+   font-weight: bold;
+   letter-spacing: 13px;
+   font-family: Arial, Helvetica, sans-serif;
+}

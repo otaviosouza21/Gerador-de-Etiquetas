@@ -6,25 +6,37 @@
 
 .campo{
     display: flex;
-    justify-content: space-between;
     background-color: white;
     border-radius: 5px;
-    padding: 5px;
     gap: 2px;
     margin-bottom: 2px;
+    flex-direction: column;
+    max-width: 60px;
+    padding: 3px;
+}
+
+
+
+.plusSub{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: space-between;
+    flex: 1;
+    gap: 5px;
+}
+
+.campo > label:first-child{
+background-color:rgba(0, 0, 0, 0.952);
+color: white;
+text-align: center;
 
 }
 
 
-.campo input{
-    border: none;
-    display: flex;
-text-align: center;
-    background-color: white;
-    border-bottom: 1px solid black;
-    background: none;
-    outline: none;
-    font-weight: bold;
-    width: 40px;
-
+.plusSub img{
+    width: 16px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
 }

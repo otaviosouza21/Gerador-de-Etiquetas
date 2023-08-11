@@ -1,29 +1,38 @@
 import React from "react";
 import style from "../css/Input.module.css";
+import plus from "../Assets/plus-svgrepo-com.svg";
+import sub from "../Assets/subtract-svgrepo-com.svg";
 
-const Input = () => {
+const Input = ({setCarga,carga}) => {
+  
+  function handleDecrement(key){
+    setCarga(prevCarga=>({
+      ...prevCarga,[key]:prevCarga[key]-1
+    }))
+  
+  }
+
+  function handleIncrement(key){
+    setCarga(prevCarga=>({
+      ...prevCarga,[key]:prevCarga[key]+1
+    }))
+  }
+
 
 
   return (
-    <div className={style.container}>
-      <div className={style.campo}>
-        <label>A:</label>
-       <input min={0} type="number" placeholder="0"></input> 
-      </div>
-      <div className={style.campo}>
-        <label>B:</label>
-        <input min={0} type="number" placeholder="0"></input>
-      </div>
-      <div className={style.campo}>
-        <label>C:</label>
-        <input min={0} type="number" placeholder="0"></input>
-      </div>
-      <div className={style.campo}>
-        <label>S:</label>
-        <input min={0} type="number" placeholder="0"></input>
-      </div>
-      
-    </div>
+    <ul className={style.container}>
+    {Object.keys(carga).map(key => (
+      <li className={style.campo} key={key}>
+        <label>{key}</label>
+        <label className={style.plusSub}>
+          <img src={sub} onClick={() => handleDecrement(key)} />
+          {carga[key]}
+          <img src={plus} onClick={() => handleIncrement(key)} />
+        </label>
+      </li>
+    ))}
+  </ul>
   );
 };
 
