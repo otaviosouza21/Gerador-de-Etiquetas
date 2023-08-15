@@ -25,10 +25,12 @@ const Home = () => {
     pluginRequest(url, options);
   }, [update]);
 
+
+
   if (data)
     return (
      
-        <TelaEmissao setUpdate={setUpdate} update={update} pedido={data} />
+        <TelaEmissao loading={loading} error={error} setUpdate={setUpdate} update={update} pedido={data} />
     
     );
 };

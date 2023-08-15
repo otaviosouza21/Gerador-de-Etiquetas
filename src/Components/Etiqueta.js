@@ -1,22 +1,25 @@
 import React from "react";
 import style from "../css/Etiqueta.module.css";
-import qr from "../Assets/qrcode-svgrepo-com.svg";
 import { GlobalContext } from "../Context/GlobalContext";
+import QRCode from 'qrcode.react';
 
 const Etiqueta = () => {
-  const { data, repeat } = React.useContext(GlobalContext);
+  const { data, repeat,checkImpressao, setCheckImpressão } = React.useContext(GlobalContext);
+ 
+
 
   return (
     <div>
       {data.map((dados, index) => {
         const keys = Object.keys(repeat[index]);
         const props = keys.map((prop) => repeat[index][prop]);
-        const quantidade = props.reduce((a, b) => a + b, 0);
         const etiquetas = [];
+      
 
         keys.forEach((item, index) => {
           if (props[index] > 0) {
             for (let i = 0; i < props[index]; i++) {
+              const qrData = dados.pedido + " " + item + Number(i+1)
               etiquetas.push(
                 <div key={i} className={style.etiqueta}>
                   <div className={style.titulo}>
@@ -31,7 +34,7 @@ const Etiqueta = () => {
                     {i + 1}
                   </div>
                   <div className={style.code}>
-                    <img src={qr} />
+                    <QRCode value={qrData} />
                   </div>
                 </div>
               );

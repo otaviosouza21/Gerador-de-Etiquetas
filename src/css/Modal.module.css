@@ -9,7 +9,6 @@
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.582);
- 
 }
 
 .modal{
@@ -18,18 +17,46 @@
     max-width: 700px;
     height: 400px;
     background-color: rgba(78, 78, 78, 0.932);
-    border: solid 5px rgba(3, 3, 3, 0.89);
+    border: solid 5px rgba(3, 3, 3, 0.685);
     padding: 20px;
     position: relative;
-    overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1000;
 }
 
-.modal::after{
-    content: "";
-    display: block;
-    width: 10px;
+.closeButton img{
+  width: 40px;
 }
+
+.closeButton{
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  left: 95%;
+  z-index: 1001;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+
+.modal::-webkit-scrollbar {
+  width: 5px; /* Largura da barra de rolagem vertical */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #383838; /* Cor do polegar */
+  border-radius: 5px; /* Borda arredondada do polegar */
+}
+ 
+
+.modal::-webkit-scrollbar-track{
+  background-color: #ffffff;
+}
+
+
 
 
 .modal h1{
@@ -47,35 +74,5 @@
 
 
 
-    .closeButton {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 95%;
-      }
-      
-      .closeButton::before,
-      .closeButton::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 70%;
-        height: 2px;
-        background-color: black;
-        transform-origin: center;
-      }
-      
-      .closeButton::before {
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-      
-      .closeButton::after {
-        transform: translate(-50%, -50%) rotate(-45deg);
-      }
-
-   
 
    

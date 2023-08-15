@@ -17,3 +17,10 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .carga{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
