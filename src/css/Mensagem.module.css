@@ -1,0 +1,18 @@
+.mensagem{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.808);
+    padding: 5px 8px;
+    opacity: 0;
+    animation: left .5s forwards;
+    border-radius: 5px;
+}
+
+@keyframes left {
+    to{
+        transform: translateX(200px);
+        opacity: 1;
+    }
+}

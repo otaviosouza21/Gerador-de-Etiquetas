@@ -4,9 +4,10 @@ import Imprimir from "./Imprimir";
 import { GlobalContext } from "../Context/GlobalContext";
 import Card from "./Card";
 import close from '../Assets/close-svgrepo-com.svg'
+import Mensagem from "./Mensagem";
 
 const Modal = ({ setModal, modal, ticketList }) => {
-  const { data, setData } = React.useContext(GlobalContext);
+  const { data, setData,message } = React.useContext(GlobalContext);
   const ref = React.useRef()
 
 function handleClick(event){
@@ -19,8 +20,8 @@ if(event.target === ref.current) setModal(!modal)
   return (
     <>
       <section className={style.container} ref={ref} onClick={handleClick}>
-        
-        <div className={style.modal}>
+      {message && <Mensagem mensagem="Não há nenhum volume selecionado" />}
+        <div className={`${style.modal} animation`}>
         <div onClick={()=>setModal(!modal)}
             className={style.closeButton}
           >
@@ -36,6 +37,7 @@ if(event.target === ref.current) setModal(!modal)
             setData={setData}
             ticketList={ticketList}
           />
+       
         </div>
       </section>
     </>

@@ -4,7 +4,7 @@ import { GlobalContext } from "../Context/GlobalContext";
 import QRCode from 'qrcode.react';
 
 const Etiqueta = () => {
-  const { data, repeat,checkImpressao, setCheckImpressão } = React.useContext(GlobalContext);
+  const { data, repeat} = React.useContext(GlobalContext);
  
 
 

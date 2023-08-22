@@ -39,3 +39,16 @@ justify-content: space-between;
 
 
 } */
+
+.animation{
+    animation: .5s forwards ani;
+    transform: translateX(-300px);
+    opacity: 0;
+}
+
+@keyframes ani {
+    to{
+        transform: initial;
+        opacity: 1;
+    }
+}

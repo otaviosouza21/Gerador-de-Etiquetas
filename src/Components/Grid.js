@@ -9,8 +9,6 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import checkUn from "../Assets/check-box-unchecked-svgrepo-com.svg";
-import checked from "../Assets/check-box-svgrepo-com.svg";
 
 const Grid = ({ pedido, setTicketList, ticketList, loading, error }) => {
   const [checkedRows, setCheckedRows] = React.useState([]);
@@ -56,7 +54,7 @@ const Grid = ({ pedido, setTicketList, ticketList, loading, error }) => {
     return (
       <TableContainer className={style.grid} component={Paper}>
         <Table className={style.table}>
-          <TableHead>
+          <TableHead className={style.head}>
             <TableRow className={style.header}>
               <TableCell>Pedido</TableCell>
               <TableCell>Cliente</TableCell>
@@ -82,8 +80,9 @@ const Grid = ({ pedido, setTicketList, ticketList, loading, error }) => {
                     <TableCell>{tit.endereco}</TableCell>
                     <TableCell className={style.labels}>
                       {labels[index].map((lab) => {
+                        console.log(lab);
                         return (
-                          <span style={{ background: lab.color }}>
+                          <span style={{ background: lab.color === "sky_light" ? "skyblue" : lab.color }}>
                             {lab.name}
                           </span>
                         );

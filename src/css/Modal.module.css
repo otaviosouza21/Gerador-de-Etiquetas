@@ -19,7 +19,6 @@
     background-color: rgba(78, 78, 78, 0.932);
     border: solid 5px rgba(3, 3, 3, 0.685);
     padding: 20px;
-    position: relative;
     overflow-x: hidden;
     z-index: 1000;
 }
