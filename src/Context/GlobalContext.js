@@ -7,6 +7,7 @@ export const GlobalStorage = ({ children }) => {
   const [repeat, setRepeat] = React.useState([]);
   const [checkImpressao, setCheckImpressao] = React.useState(false);
   const [message, setMessage] = React.useState(false);
+  /* const [select,setSelect] = React.useState("Separação") */
 
   return (
     <GlobalContext.Provider
@@ -18,7 +19,9 @@ export const GlobalStorage = ({ children }) => {
         checkImpressao,
         setCheckImpressao,
         message,
-        setMessage
+        setMessage,
+       /*  select,
+        setSelect */
       }}
     >
       {children}

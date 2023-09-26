@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <GlobalStorage>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/Gerador-de-Etiquetas" element={<Home />} />
           <Route path="etiqueta" element={<Etiqueta />} />
         </Routes>
       </GlobalStorage>

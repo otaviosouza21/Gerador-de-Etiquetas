@@ -8,6 +8,7 @@ import truck from '../Assets/truck-speed-svgrepo-com.svg';
 import Grid from "./Grid";
 import Modal from "./Modal";
 import { GlobalContext} from "../Context/GlobalContext";
+import DropList from "./DropList";
 
 
 const TelaEmissao = ({ pedido, setUpdate, update, loading, error }) => {
@@ -25,6 +26,7 @@ const TelaEmissao = ({ pedido, setUpdate, update, loading, error }) => {
 
           <h1>Emissão de Etiquetas</h1>
           <div className={style.buttons}>
+            {/* <DropList /> */}
             <Button
               icon={update}
               text="Atualizar"

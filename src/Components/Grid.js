@@ -80,7 +80,7 @@ const Grid = ({ pedido, setTicketList, ticketList, loading, error }) => {
                     <TableCell>{tit.endereco}</TableCell>
                     <TableCell className={style.labels}>
                       {labels[index].map((lab) => {
-                        console.log(lab);
+                   
                         return (
                           <span style={{ background: lab.color === "sky_light" ? "skyblue" : lab.color }}>
                             {lab.name}
