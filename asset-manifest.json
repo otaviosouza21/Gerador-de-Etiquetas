@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Gerador-de-Etiquetas/static/css/main.cf1dbc53.css",
-    "main.js": "/Gerador-de-Etiquetas/static/js/main.3d144f47.js",
+    "main.js": "/Gerador-de-Etiquetas/static/js/main.1403870f.js",
     "static/media/truck-speed-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/truck-speed-svgrepo-com.e81bdcc08012237cd363699641ec986d.svg",
     "static/media/printer-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/printer-svgrepo-com.56f4418f056827d2883ba3c3740a564a.svg",
     "static/media/update.svg": "/Gerador-de-Etiquetas/static/media/update.81675eae9512ff3e5c2fef7945854ff4.svg",
@@ -10,10 +10,10 @@
     "static/media/subtract-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/subtract-svgrepo-com.12f302aadbddba903290268de990f401.svg",
     "static/media/plus-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/plus-svgrepo-com.a12b3352a90d4a7dc694b3dfd4896395.svg",
     "main.cf1dbc53.css.map": "/Gerador-de-Etiquetas/static/css/main.cf1dbc53.css.map",
-    "main.3d144f47.js.map": "/Gerador-de-Etiquetas/static/js/main.3d144f47.js.map"
+    "main.1403870f.js.map": "/Gerador-de-Etiquetas/static/js/main.1403870f.js.map"
   },
   "entrypoints": [
     "static/css/main.cf1dbc53.css",
-    "static/js/main.3d144f47.js"
+    "static/js/main.1403870f.js"
   ]
 }
