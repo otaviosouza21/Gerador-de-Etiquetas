@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.etiqueta {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: solid 1px black;
+  position: relative;
+  padding: 10px;
+}
+
+.titulo h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  border-bottom: solid 1px black;
+}
+
+.infos {
+  text-align: center;
+}
+
+.descricao {
+  font-size: 1.4rem;
+}
+
+.preco {
+  font-size: 3rem;
+}
+
+.img img{
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}

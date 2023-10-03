@@ -21,3 +21,9 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.trash{
+    max-width: 22px;
+    cursor: pointer;
+    
+}

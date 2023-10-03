@@ -3,12 +3,14 @@ import Home from "./Components/Home";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Etiqueta from "./Components/Etiqueta";
-import { GlobalStorage } from "./Context/GlobalContext";
+import { GlobalContext, GlobalStorage } from "./Context/GlobalContext";
 import TelaEmissaoProdutos from "./Components/TelaEmissaoProdutos";
 import TelaEmissao from "./Components/TelaEmissao";
 import { GET_CARDS, GET_PLUGIN } from "./API/api";
 import useFetch from "./API/useFetch";
 import Menu from "./Components/Menu";
+import EtiquetaDeProdutos from "./Components/EtiquetaDeProdutos";
+import PrintButton from "./Components/PrintButton";
 
 function App() {
   const { data, loading, error, request } = useFetch();
@@ -50,6 +52,7 @@ function App() {
           />
           <Route path="etiqueta" element={<Etiqueta />} />
           <Route path="/etiqueta-produtos" element={<TelaEmissaoProdutos />} />
+          <Route path="/etiqueta-gerada" element={<EtiquetaDeProdutos/>} />
         </Routes>
       </GlobalStorage>
     </BrowserRouter>

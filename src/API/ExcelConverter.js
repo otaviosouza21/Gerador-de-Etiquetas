@@ -21,8 +21,10 @@ const ExcelConverter = ({ file }) => {
 
         // Converta a planilha em um objeto JSON
         const jsonData = XLSX.utils.sheet_to_json(sheet);
-        localStorage.setItem("dados", jsonData);
-        setProdutos(jsonData);
+        localStorage.setItem("dados", JSON.stringify(jsonData));
+        const datas = localStorage.getItem("dados");
+        const parsedData = JSON.parse(datas);
+        setProdutos(parsedData);
       };
 
       reader.readAsArrayBuffer(file);

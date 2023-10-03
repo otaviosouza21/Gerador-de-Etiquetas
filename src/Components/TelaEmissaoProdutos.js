@@ -12,17 +12,18 @@ import {
 import { GlobalContext } from "../Context/GlobalContext";
 import SubirArquivo from "../API/SubirArquivo";
 import style from "../css/TelaEmissaoProdutos.module.css";
-import plus from '../Assets/plus-svgrepo-com.svg';
-import sub from '../Assets/subtract-svgrepo-com.svg'
+import ExcelConverter from "../API/ExcelConverter";
+import RowComponent from "./RowComponent";
 
 const TelaEmissaoProdutos = () => {
-  const { gridProdutos } = React.useContext(GlobalContext);
+  const { gridProdutos, setGridProdutos } = React.useContext(GlobalContext);
 
   return (
     <section className={style.container}>
+      <ExcelConverter />
       <h1>Etiqueta para Produtos</h1>
       <SubirArquivo />
-      <Search place="Insira o codigo do produto" label="Codigo" />
+      <Search place="Insira o codigo do produto" label="Codigo" gridProdutos={gridProdutos}/>
       <TableContainer className={style.table} component={Paper}>
         <Table>
           <TableHead>
@@ -31,24 +32,14 @@ const TelaEmissaoProdutos = () => {
               <TableCell>Produto</TableCell>
               <TableCell>Valor</TableCell>
               <TableCell>Quantidade</TableCell>
+              <TableCell></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {gridProdutos &&
-              gridProdutos.map((produto) => {
+              gridProdutos.map((produto, index) => {
                 return (
-                  <TableRow>
-                    <TableCell>{produto[0]["CÓD. INTERNO"]}</TableCell>
-                    <TableCell>{produto[0]["DESCRIÇÃO"]}</TableCell>
-                    <TableCell>{produto[0]["VLR. VENDA (1)"]}</TableCell>
-                    <TableCell>
-                      <div className={style.subPlus}>
-                        <img src={sub} />
-                        2
-                        <img src={plus} />
-                      </div>
-                    </TableCell>
-                  </TableRow>
+                  <RowComponent key={index} gridProdutos={gridProdutos} setGridProdutos={setGridProdutos} produto={produto} index={index}/>
                 );
               })}
           </TableBody>

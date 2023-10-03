@@ -3,13 +3,13 @@ import style from "../css/Search.module.css";
 import plus from "../Assets/plus-svgrepo-com.svg";
 import { GlobalContext } from "../Context/GlobalContext";
 import Toast from "./Toast";
-import print from '../Assets/printer-svgrepo-com.svg'
+import print from "../Assets/printer-svgrepo-com.svg";
+import { Link } from "react-router-dom";
 
 const Search = ({ place, label }) => {
   const [search, setSearch] = React.useState("");
   const { produtos, gridProdutos, setGridProdutos } =
     React.useContext(GlobalContext);
-  const [enviaDados, setEnviaDados] = React.useState(false);
   const [pesquisa, setPesquisa] = React.useState(null);
   const [erro, setErro] = React.useState(false);
 
@@ -37,6 +37,8 @@ const Search = ({ place, label }) => {
     }
   }
 
+  function handleImprime() {}
+
   return (
     <div className={style.search}>
       {erro && <Toast setErro={setErro} />}
@@ -48,7 +50,13 @@ const Search = ({ place, label }) => {
         id={label}
       />
       <img onClick={handleClick} src={plus} />
-      <img style={{background: "gray"}} src={print} />
+      <Link to="/etiqueta-gerada">
+        <img
+          style={{ background: "gray" }}
+          onClick={handleImprime}
+          src={print}
+        />
+      </Link>
     </div>
   );
 };

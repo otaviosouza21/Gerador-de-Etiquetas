@@ -7,8 +7,9 @@ export const GlobalStorage = ({ children }) => {
   const [repeat, setRepeat] = React.useState([]);
   const [checkImpressao, setCheckImpressao] = React.useState(false);
   const [message, setMessage] = React.useState(false);
-  const [produtos,setProdutos] = React.useState(null);
-  const [gridProdutos,setGridProdutos] = React.useState([])
+  const [produtos, setProdutos] = React.useState(null);
+  const [gridProdutos, setGridProdutos] = React.useState([]);
+ 
 
   /* const [select,setSelect] = React.useState("Separação") */
 
@@ -26,9 +27,7 @@ export const GlobalStorage = ({ children }) => {
         produtos,
         setProdutos,
         gridProdutos,
-        setGridProdutos
-       /*  select,
-        setSelect */
+        setGridProdutos,
       }}
     >
       {children}
