@@ -1,0 +1,23 @@
+.container{
+    padding: 20px;
+ 
+}
+
+.container h1{
+    text-align: center;
+}
+
+.subPlus {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.subPlus img{
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}

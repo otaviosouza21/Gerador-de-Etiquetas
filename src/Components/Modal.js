@@ -10,6 +10,8 @@ const Modal = ({ setModal, modal, ticketList }) => {
   const { data, setData,message } = React.useContext(GlobalContext);
   const ref = React.useRef()
 
+ 
+
 function handleClick(event){
 if(event.target === ref.current) setModal(!modal) 
 

@@ -1,0 +1,29 @@
+.menu{
+    background-color: white;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.507);
+}
+
+.lista{
+    display: flex;
+  justify-content: space-around;
+}
+
+.lista li img{
+    width: 40px;
+
+}
+
+.lista li{
+    list-style: none;
+    padding: 16px;
+}
+
+.lista li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+

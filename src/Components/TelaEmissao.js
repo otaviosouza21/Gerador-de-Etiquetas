@@ -20,11 +20,7 @@ const TelaEmissao = ({ pedido, setUpdate, update, loading, error }) => {
     <section className={style.container}>
       <header>
         <div className={style.header}>
-          <div className={style.logo}>
-            <img src={logo} />
-          </div>
-
-          <h1>Emissão de Etiquetas</h1>
+          <h1>Etiqueta para Pedidos</h1>
           <div className={style.buttons}>
             {/* <DropList /> */}
             <Button
@@ -57,6 +53,7 @@ const TelaEmissao = ({ pedido, setUpdate, update, loading, error }) => {
       {modal && (
         <Modal setModal={setModal} modal={modal} ticketList={ticketList} />
       )}
+    
     </section>
   );
 };
