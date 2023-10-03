@@ -1,4 +1,12 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
+/*! sheetjs (C) 2013-present SheetJS -- http://sheetjs.com */
 
 /**
  * @license React
@@ -55,7 +63,7 @@
  */
 
 /**
- * @remix-run/router v1.7.2
+ * @remix-run/router v1.9.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -66,7 +74,7 @@
  */
 
 /**
- * React Router DOM v6.14.2
+ * React Router DOM v6.16.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -77,7 +85,7 @@
  */
 
 /**
- * React Router v6.14.2
+ * React Router v6.16.0
  *
  * Copyright (c) Remix Software Inc.
  *
