@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Gerador-de-Etiquetas/static/css/main.e581c672.css",
-    "main.js": "/Gerador-de-Etiquetas/static/js/main.bb6ee14d.js",
+    "main.css": "/Gerador-de-Etiquetas/static/css/main.610cbb12.css",
+    "main.js": "/Gerador-de-Etiquetas/static/js/main.417cf658.js",
     "static/media/truck-speed-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/truck-speed-svgrepo-com.e81bdcc08012237cd363699641ec986d.svg",
     "static/media/produtos.svg": "/Gerador-de-Etiquetas/static/media/produtos.2c128683ee438703ec78862b0f1ab384.svg",
     "static/media/printer-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/printer-svgrepo-com.56f4418f056827d2883ba3c3740a564a.svg",
@@ -13,11 +13,11 @@
     "static/media/close-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/close-svgrepo-com.5c6cd17c4693737efbb3c8401e70666e.svg",
     "static/media/subtract-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/subtract-svgrepo-com.12f302aadbddba903290268de990f401.svg",
     "static/media/plus-svgrepo-com.svg": "/Gerador-de-Etiquetas/static/media/plus-svgrepo-com.a12b3352a90d4a7dc694b3dfd4896395.svg",
-    "main.e581c672.css.map": "/Gerador-de-Etiquetas/static/css/main.e581c672.css.map",
-    "main.bb6ee14d.js.map": "/Gerador-de-Etiquetas/static/js/main.bb6ee14d.js.map"
+    "main.610cbb12.css.map": "/Gerador-de-Etiquetas/static/css/main.610cbb12.css.map",
+    "main.417cf658.js.map": "/Gerador-de-Etiquetas/static/js/main.417cf658.js.map"
   },
   "entrypoints": [
-    "static/css/main.e581c672.css",
-    "static/js/main.bb6ee14d.js"
+    "static/css/main.610cbb12.css",
+    "static/js/main.417cf658.js"
   ]
 }
