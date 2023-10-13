@@ -29,15 +29,20 @@ const Search = ({ place, label }) => {
     }
   }
 
-  function handleClick() {
+  function handleClick(targ) {
     if (pesquisa) {
       setGridProdutos([...gridProdutos, pesquisa]);
     } else {
       setErro(true);
     }
+    setSearch("");
   }
 
-  function handleImprime() {}
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  }
 
   return (
     <div className={style.search}>
@@ -48,14 +53,11 @@ const Search = ({ place, label }) => {
         value={search}
         placeholder={place}
         id={label}
+        onKeyPress={handleKeyPress}
       />
-      <img onClick={handleClick} src={plus} />
+      <img tabIndex="0" onClick={handleClick} src={plus} />
       <Link to="/etiqueta-gerada">
-        <img
-          style={{ background: "gray" }}
-          onClick={handleImprime}
-          src={print}
-        />
+        <img style={{ background: "#eee" }} src={print} />
       </Link>
     </div>
   );

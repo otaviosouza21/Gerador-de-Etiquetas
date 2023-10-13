@@ -5,23 +5,37 @@ import sub from "../Assets/subtract-svgrepo-com.svg";
 import trash from "../Assets/trash.svg";
 import style from "../css/TelaEmissaoProdutos.module.css";
 
-
 const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
 
+  function converteParaReal(numero) {
+    return numero.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
 
   const [plusSub, setPlusSub] = React.useState(() => {
-   return gridProdutos[index][0].quantidade ||0;
+    return gridProdutos[index][0].quantidade || 1;
   });
+
+  React.useEffect(() => {
+    gridProdutos[index][0].quantidade = plusSub;
+  }, []);
+
 
   const handleAdd = () => {
     setPlusSub(plusSub + 1);
+    gridProdutos[index][0].quantidade = 0;
     gridProdutos[index][0].quantidade = plusSub + 1;
+    console.log(gridProdutos);
   };
 
   const handleSub = () => {
     if (plusSub > 0) {
       setPlusSub(plusSub - 1);
-      gridProdutos[index][0].quantidade = plusSub + 1;
+      gridProdutos[index][0].quantidade = 0;
+      gridProdutos[index][0].quantidade = plusSub - 1;
+      console.log(gridProdutos);
     }
   };
 
@@ -35,7 +49,7 @@ const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
     <TableRow>
       <TableCell>{produto[0]["CÓD. INTERNO"]}</TableCell>
       <TableCell>{produto[0]["DESCRIÇÃO"]}</TableCell>
-      <TableCell>{produto[0]["VLR. VENDA (1)"]}</TableCell>
+      <TableCell>{converteParaReal(produto[0]["VLR. VENDA (1)"])}</TableCell>
       <TableCell>
         <div className={style.subPlus}>
           <img onClick={handleSub} src={sub} />

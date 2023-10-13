@@ -23,4 +23,11 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width:370px) {
+    .pedido{
+    flex-direction: column;
+    }
   }

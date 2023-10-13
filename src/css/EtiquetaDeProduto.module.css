@@ -1,6 +1,10 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; 
+  position: relative;
+  width: 793.70px;
+  height: 1122.52px;
+  place-items: center;
 }
 
 .etiqueta {
@@ -9,12 +13,15 @@
   background-color: white;
   border: solid 1px black;
   position: relative;
-  padding: 10px;
+  padding: 15px;
+ 
+
+
 }
 
 .titulo h4 {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   border-bottom: solid 1px black;
 }
 
@@ -23,11 +30,12 @@
 }
 
 .descricao {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .preco {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .img img{
@@ -36,4 +44,55 @@
     position: absolute;
     top: 50%;
     left: 10px;
+}
+
+.logo{
+  position: absolute;
+  top:5%;
+  opacity: 0.2;
+}
+
+.logo img{
+  width: 30px;
+}
+
+
+.printButton{
+  position:fixed;
+  padding: 26px 40px;
+  font-size: 1.2rem;
+  background-color: rgb(54, 255, 47);
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  top: 87vh;
+  left: 85vw;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.493);
+}
+
+.printButton:hover,.printButton:focus{
+  background-color: rgb(16, 194, 10);
+  transition: .5s;
+}
+
+.printButton img{
+  width: 30px;
+}
+
+@media print {
+
+  @page{
+    size: A4;
+    
+  }
+  
+.printButton{
+  display: none;
+}
+
 }

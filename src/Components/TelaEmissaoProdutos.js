@@ -23,11 +23,15 @@ const TelaEmissaoProdutos = () => {
       <ExcelConverter />
       <h1>Etiqueta para Produtos</h1>
       <SubirArquivo />
-      <Search place="Insira o codigo do produto" label="Codigo" gridProdutos={gridProdutos}/>
+      <Search
+        place="Insira o codigo do produto"
+        label="Codigo"
+        gridProdutos={gridProdutos}
+      />
       <TableContainer className={style.table} component={Paper}>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow className={style.header}>
               <TableCell>Codigo</TableCell>
               <TableCell>Produto</TableCell>
               <TableCell>Valor</TableCell>
@@ -39,7 +43,13 @@ const TelaEmissaoProdutos = () => {
             {gridProdutos &&
               gridProdutos.map((produto, index) => {
                 return (
-                  <RowComponent key={index} gridProdutos={gridProdutos} setGridProdutos={setGridProdutos} produto={produto} index={index}/>
+                  <RowComponent
+                    key={index}
+                    gridProdutos={gridProdutos}
+                    setGridProdutos={setGridProdutos}
+                    produto={produto}
+                    index={index}
+                  />
                 );
               })}
           </TableBody>

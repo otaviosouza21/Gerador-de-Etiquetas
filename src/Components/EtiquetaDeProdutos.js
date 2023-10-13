@@ -3,6 +3,7 @@ import { GlobalContext } from "../Context/GlobalContext";
 import logo from "../Assets/Logo.png";
 import style from "../css/EtiquetaDeProduto.module.css";
 import { Print, PrintProvider } from "react-print";
+import print from "../Assets/printer-svgrepo-com.svg";
 
 const EtiquetaDeProdutos = () => {
   const { gridProdutos } = React.useContext(GlobalContext);
@@ -35,6 +36,10 @@ const EtiquetaDeProdutos = () => {
         }
         return etiquetas;
       })}
+      <button className={style.printButton} onClick={window.print}>
+        <img src={print} />
+        Imprimir
+      </button>
     </section>
   );
 };

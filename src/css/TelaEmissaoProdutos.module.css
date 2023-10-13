@@ -27,3 +27,21 @@
     cursor: pointer;
     
 }
+
+.header{
+background-color: #6b6969;
+}
+
+.header th{
+    font-weight: bold;
+    color: white;
+}
+
+
+
+@media (max-width: 350px) {
+    .container h1{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+}
