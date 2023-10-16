@@ -10,8 +10,9 @@ const Search = ({ place, label }) => {
   const [search, setSearch] = React.useState("");
   const { produtos, gridProdutos, setGridProdutos } =
     React.useContext(GlobalContext);
-  const [pesquisa, setPesquisa] = React.useState(null);
+  let [pesquisa, setPesquisa] = React.useState(null);
   const [erro, setErro] = React.useState(false);
+  const [repetido, setRepetido] = React.useState(false);
 
   function handleChange(e) {
     const searchAtual = e.target.value;
@@ -30,12 +31,22 @@ const Search = ({ place, label }) => {
   }
 
   function handleClick(targ) {
-    if (pesquisa) {
+    const repetido =
+      pesquisa &&
+      gridProdutos?.some((val) => {
+        return val[0]["CÓD. INTERNO"].includes(pesquisa[0]["CÓD. INTERNO"]);
+      });
+
+    if (pesquisa && repetido !== true) {
       setGridProdutos([...gridProdutos, pesquisa]);
-    } else {
+      setSearch("");
+    } else if (pesquisa && repetido !== false) {
+      setRepetido(true);
+    } else if (pesquisa === null) {
       setErro(true);
+      setSearch("");
     }
-    setSearch("");
+    setPesquisa(() => (pesquisa = null));
   }
 
   function handleKeyPress(e) {
@@ -46,7 +57,16 @@ const Search = ({ place, label }) => {
 
   return (
     <div className={style.search}>
-      {erro && <Toast setErro={setErro} />}
+      {erro && (
+        <Toast color="red" text="Item não encontrado" estado={setErro} />
+      )}
+      {repetido && (
+        <Toast
+          color="yellow"
+          text="Este item já foi inserido"
+          estado={setRepetido}
+        />
+      )}
       <input
         type="text"
         onChange={handleChange}
@@ -56,8 +76,9 @@ const Search = ({ place, label }) => {
         onKeyPress={handleKeyPress}
       />
       <img tabIndex="0" onClick={handleClick} src={plus} />
-      <Link to="/etiqueta-gerada">
-        <img style={{ background: "#eee" }} src={print} />
+      <Link className={style.print} to="/etiqueta-gerada">
+        <img src={print} />
+        <span>{gridProdutos.length} Produtos</span>
       </Link>
     </div>
   );

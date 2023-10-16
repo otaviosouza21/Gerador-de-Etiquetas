@@ -44,6 +44,11 @@ justify-content: space-between;
 
 } */
 
+.active{
+    border-bottom: solid 2px black;
+    
+}
+
 .animation{
     animation: .5s forwards ani;
     transform: translateX(-300px);
@@ -55,4 +60,8 @@ justify-content: space-between;
         transform: initial;
         opacity: 1;
     }
+}
+
+body .container{
+    margin: 0 auto;
 }

@@ -15,7 +15,12 @@
 
 .lista li {
   list-style: none;
-  padding: 16px;
+
+}
+
+
+.lista li a{
+  padding: 12px;
 }
 
 .lista li a {
@@ -27,6 +32,11 @@
   font-weight: bold;
 }
 
+
+.active{
+  background-color: blue;
+  display: none;
+}
 
 
 @media (max-width: 400px) {

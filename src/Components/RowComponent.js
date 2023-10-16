@@ -27,7 +27,6 @@ const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
     setPlusSub(plusSub + 1);
     gridProdutos[index][0].quantidade = 0;
     gridProdutos[index][0].quantidade = plusSub + 1;
-    console.log(gridProdutos);
   };
 
   const handleSub = () => {
@@ -35,7 +34,6 @@ const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
       setPlusSub(plusSub - 1);
       gridProdutos[index][0].quantidade = 0;
       gridProdutos[index][0].quantidade = plusSub - 1;
-      console.log(gridProdutos);
     }
   };
 

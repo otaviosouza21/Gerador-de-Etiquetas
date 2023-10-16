@@ -30,3 +30,21 @@
     padding: 10px;
 
 }
+
+.print{
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1px;
+}
+
+
+
+.print img{
+    background-color: grey;
+}

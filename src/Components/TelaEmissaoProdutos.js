@@ -21,7 +21,7 @@ const TelaEmissaoProdutos = () => {
   return (
     <section className={style.container}>
       <ExcelConverter />
-      <h1>Etiqueta para Produtos</h1>
+      <h1>Etiquetas para Produtos</h1>
       <SubirArquivo />
       <Search
         place="Insira o codigo do produto"

@@ -20,7 +20,7 @@ const TelaEmissao = ({ pedido, setUpdate, update, loading, error }) => {
     <section className={style.container}>
       <header>
         <div className={style.header}>
-          <h1>Etiqueta para Pedidos</h1>
+          <h1>Etiquetas para Pedidos</h1>
           <div className={style.buttons}>
             {/* <DropList /> */}
             <Button
