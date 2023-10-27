@@ -5,6 +5,7 @@ import { GlobalContext } from "../Context/GlobalContext";
 import Toast from "./Toast";
 import print from "../Assets/printer-svgrepo-com.svg";
 import { Link } from "react-router-dom";
+import { TextField } from "@mui/material";
 
 const Search = ({ place, label }) => {
   const [search, setSearch] = React.useState("");
@@ -75,6 +76,7 @@ const Search = ({ place, label }) => {
         id={label}
         onKeyPress={handleKeyPress}
       />
+
       <img tabIndex="0" onClick={handleClick} src={plus} />
       <Link className={style.print} to="/etiqueta-gerada">
         <img src={print} />

@@ -1,18 +1,22 @@
 import React from "react";
 import style from "../css/Toast.module.css";
+import { Alert } from "@mui/material";
+
 
 const Toast = ({ estado, text, color }) => {
   setTimeout(() => {
     estado(false);
   }, 3000);
 
+  const erro = () => {
+    if (text === "Item não encontrado") return "error";
+    if (text === "Este item já foi inserido") return "warning";
+  };
+
   return (
-    <div style={{ background: color }} className={style.toast}>
-      <p>{text}</p>
-      <button style={{ background: color }} onClick={() => estado(false)} className={style.close}>
-        X
-      </button>
-    </div>
+    <Alert severity={erro()} className={style.toast} >
+      {text}
+    </Alert>
   );
 };
 
