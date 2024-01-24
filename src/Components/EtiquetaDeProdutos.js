@@ -1,8 +1,6 @@
 import React from "react";
 import { GlobalContext } from "../Context/GlobalContext";
-import logo from "../Assets/Logo.png";
 import style from "../css/EtiquetaDeProduto.module.css";
-import { Print, PrintProvider } from "react-print";
 import print from "../Assets/printer-svgrepo-com.svg";
 
 const EtiquetaDeProdutos = () => {

@@ -10,7 +10,7 @@ import { GET_CARDS, GET_PLUGIN } from "./API/api";
 import useFetch from "./API/useFetch";
 import Menu from "./Components/Menu";
 import EtiquetaDeProdutos from "./Components/EtiquetaDeProdutos";
-import PrintButton from "./Components/PrintButton";
+
 
 function App() {
   const { data, loading, error, request } = useFetch();
@@ -21,6 +21,7 @@ function App() {
     request: pluginRequest,
   } = useFetch();
   const [update, setUpdate] = React.useState(false);
+
 
   React.useEffect(() => {
     const { url, options } = GET_CARDS();
