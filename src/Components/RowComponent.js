@@ -6,7 +6,6 @@ import trash from "../Assets/trash.svg";
 import style from "../css/TelaEmissaoProdutos.module.css";
 
 const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
-
   function converteParaReal(numero) {
     return numero.toLocaleString("pt-BR", {
       style: "currency",
@@ -19,9 +18,9 @@ const RowComponent = ({ produto, gridProdutos, index, setGridProdutos }) => {
   });
 
   React.useEffect(() => {
-    gridProdutos[index][0].quantidade = plusSub;
+     gridProdutos[index][0].quantidade = plusSub;
+  
   }, []);
-
 
   const handleAdd = () => {
     setPlusSub(plusSub + 1);
